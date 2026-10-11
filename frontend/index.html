@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Seating Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="no-print">Exam Seating Configuration</h2>
+
+    <!-- Exam Type Selection -->
+    <div class="card no-print" style="margin-bottom: 16px;">
+      <label>Exam Type:</label>
+      <select id="exam-type">
+        <option value="IA-1">IA-1</option>
+        <option value="IA-2">IA-2</option>
+        <option value="Final">Final</option>
+      </select>
+    </div>
+
+    <!-- Dynamic Groups -->
+    <div id="groupsList" class="groups-grid no-print">
+      <div class="card group-card">
+        <h3>Group 1</h3>
+        <label>Department:</label><input type="text" class="g-dept" value="CO">
+        <label>Division:</label><input type="text" class="g-div" value="A">
+        <label>Subject / Exam:</label><input type="text" class="g-sub" value="DBMS">
+      </div>
+      <div class="card group-card">
+        <h3>Group 2</h3>
+        <label>Department:</label><input type="text" class="g-dept" value="IT">
+        <label>Division:</label><input type="text" class="g-div" value="A">
+        <label>Subject / Exam:</label><input type="text" class="g-sub" value="WT">
+      </div>
+    </div>
+    <div class="action-buttons no-print" style="margin-bottom: 20px;">
+      <button id="addGroupBtn" class="btn-secondary">+ Add Group</button>
+      <button id="removeGroupBtn" class="btn-danger">- Remove Last Group</button>
+    </div>
+
+    <!-- Dynamic Rooms -->
+    <div class="card no-print" style="margin-bottom: 20px;">
+      <h3>Rooms Configuration</h3>
+      <div id="roomsList">
+        <div class="room-row">
+          <input type="text" class="room-name" value="Room 101" placeholder="Room Name">
+          <input type="number" class="room-cap" value="6" placeholder="Benches">
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button id="addRoomBtn" class="btn-secondary">+ Add Room</button>
+        <button id="removeRoomBtn" class="btn-danger">- Remove Last Room</button>
+      </div>
+    </div>
+
+    <button id="generateBtn" class="btn-primary no-print">Generate Seating Plan</button>
+    <button id="printBtn" class="btn-primary no-print" onclick="window.print()">Print Seating Arrangement</button>
+
+    <div id="resultsContainer"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
